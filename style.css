@@ -1,0 +1,20 @@
+h1 {
+	text-align: center;
+}
+
+img {
+	width: 100%;
+}
+
+* {
+	font-family: sans-serif;
+}
+
+.reacts {
+	width: 15%;
+}
+
+.reacts:hover {
+	position: relative; 
+    top: -15px;
+}

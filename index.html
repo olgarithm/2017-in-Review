@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<header>
+	<link rel="stylesheet" href="style.css">
+</header>
+<body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '310790449427723',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.11',
+      status		   : true
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<h1>2017 in Review</h1>
+<p> This is the result of me getting an iPad Pro and being bored over winter break. I hope you enjoy~</p>
+<h2>Make New Friends, but Keep the Old</h2>
+<p>Here are some new friends I made this year! I grabbed them using the Facebook API.</p>
+
+<h2>Reacts All Around</h2>
+<p>2017 was a rollercoaster. Here are some emotions I felt over this year (hover to see a breakdown):</p>
+<img class="reacts" src="like.png" alt="Facebook like button">
+<img class="reacts" src="love.png" alt="Facebook love button">
+<img class="reacts" src="laugh.png" alt="Facebook laugh button">
+<img class="reacts" src="wow.png" alt="Facebook wow button">
+<img class="reacts" src="cry.png" alt="Facebook cry button">
+<img class="reacts" src="angry.png" alt="Facebook angry button">
+
+<h2>Some Failures</h2>
+<p>You're not doing life correctly if you're not failing from time to time. Here lie the repressed memories of my failures:</p>
+<img src="tombstones.png" alt="tombstones">
+
+</body>
+</html>
