@@ -1,5 +1,9 @@
-h1 {
+h1, #charts > div{
 	text-align: center;
+}
+
+h3 {
+	font-size: 20px;
 }
 
 img {
@@ -10,11 +14,25 @@ img {
 	font-family: sans-serif;
 }
 
-.reacts {
+#reacts img {
+	margin: auto;
 	width: 15%;
 }
 
-.reacts:hover {
+#reacts img:hover {
 	position: relative; 
     top: -15px;
+}
+
+#charts {
+	display: flex;
+	flex-flow: row;
+	padding: 5px 
+}
+
+#charts > div {
+	border: 2px solid black;
+	border-radius: 20px;
+	margin: 5px;
+	padding: 7px;
 }
