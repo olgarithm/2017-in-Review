@@ -16,6 +16,10 @@ img {
 	margin-right: 10px;
 }
 
+#reacts {
+	text-align: center;
+}
+
 #reacts img {
 	margin: auto;
 	width: 15%;
@@ -29,6 +33,7 @@ img {
 #charts {
 	display: flex;
 	flex-flow: row;
+	justify-content: center;
 	padding: 5px;
 	margin-left: 0px;
 	margin-right: 0px;

@@ -3,7 +3,42 @@
 
 	window.onload = function() {
 		createCharts();
-		attachEmotions();
+		//attachEmotions();
+		var allReactions = ["like", "love", "laugh", "wow", "cry", "angry"];
+		for (var i = 0; i < allReactions.length; i++) {
+			var myDiv = document.createElement('div');
+			var reaction = allReactions[i];
+			console.log(String(reaction));
+			$(reaction).onmouseover = function() {
+				myDiv.innerHTML = getReaction(String(this.getAttribute("id")));
+				myDiv.setAttribute("id", allReactions[i] + "Reaction");
+				$("reaction").appendChild(myDiv);
+			}
+			$(reaction).onmouseout = function() {
+				$("reaction").removeChild($("reaction").childNodes[0]);
+			}
+		}
+	}
+
+	function getReaction(type) {
+		var unorderedList = document.createElement("UL");
+		unorderedList.setAttribute("id", "displayedList");
+		if (type === "like") {
+			var entry = document.createElement("li");
+			entry.appendChild(document.createTextNode("blah"));
+			unorderedList.appendChild(entry);
+			return unorderedList;
+		} else if (type === "love") {
+			return "YASS LOVE";
+		} else if (type === "laugh") {
+			return "YAS LAUGH";
+		} else if (type === "wow") {
+			return "YAS WOW";
+		} else if (type === "cry") {
+			return "YAS CRY";
+		} else {
+			return "YAS ANGRY";
+		}
 	}
 
 	// Creates the three charts that are displayed using charts.js
@@ -16,7 +51,7 @@
 		        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 		        datasets: [{
 		            label: '# of friends made',
-		            data: [8, 11, 7, 13, 13, 23, 26, 9, 16, 14, 1, 6],
+		            data: [8, 11, 7, 13, 13, 23, 26, 9, 16, 14, 1, 7],
 		            pointBackgroundColor: [
 		                'rgba(54, 100, 235, 1)',
 		                'rgba(54, 162, 256, 1)',
@@ -123,10 +158,12 @@
 	}
 
 	function attachEmotions() {
-		var allReactions = new Array("like", "love", "laugh", "wow", "cry", "angry");
+		var allReactions = ["like", "love", "laugh", "wow", "cry", "angry"];
 		for (var i = 0; i < allReactions.length; i++) {
 			var myDiv = document.createElement('div');
-			$(allReactions[i]).onmouseover = function(){
+			$(allReactions[i]).onmouseover = function() {
+				var type = getReaction(allReactions[i]);
+				console.log(type);
 				myDiv.innerHTML = getReaction(allReactions[i]);
 				myDiv.setAttribute("id", allReactions[i] + "Reaction");
 				$("reaction").appendChild(myDiv);
@@ -134,14 +171,6 @@
 			$(allReactions[i]).onmouseout = function() {
 				$("reaction").removeChild($("reaction").childNodes[0]);
 			}
-		}
-	}
-
-	function getReaction(type) {
-		console.log(type);
-		if (type === "like") {
-			console.log("yas like");
-			return "YAS LIKE";
 		}
 	}
 	// to get all the posts I've done since Jan 1st, 2017
