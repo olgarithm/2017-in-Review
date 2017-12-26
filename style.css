@@ -12,6 +12,8 @@ img {
 
 * {
 	font-family: sans-serif;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 #reacts img {
@@ -27,7 +29,9 @@ img {
 #charts {
 	display: flex;
 	flex-flow: row;
-	padding: 5px 
+	padding: 5px;
+	margin-left: 0px;
+	margin-right: 0px;
 }
 
 #charts > div {

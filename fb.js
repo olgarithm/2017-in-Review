@@ -144,54 +144,10 @@
 			return "YAS LIKE";
 		}
 	}
-
-	fbAsyncInit = function(){
-  	FB.init({
-    	appId: 'yourAppIdHere',
-    	version: 'v2.5'
-  	});
-  	FB.getLoginStatus(function(response){
-    	if(response.status === 'connected'){
-	     	FB.api('me/friends', function(a){
-	        	for(var i=0,l=a.length; i<l; i++){
-	          		/* make a call for each friend with more .api calls - a is array of User objects - props seen here https://developers.facebook.com/docs/graph-api/reference/user/ */
-	          		FB.api(a[i].id, function(r){
-	        		});
-	        	}
-      		});
-  		} else {
-      		location = 'https://www.facebook.com/dialog/oauth?client_id=replaceThisWithAppId&redirect_uri='+location;
-      		// change out replaceThisWithAppId above
-    	}
-  	});
-		var accessToken;
-		FB.getLoginStatus(function(response) {
-			console.log("we getting login status");
-	  		if (response.status === 'connected') {
-	    		accessToken = response.authResponse.accessToken;
-	    		console.log(accessToken);
-	  		} 
-		});
-		console.log(accessToken);
-		FB.api('/me/friends', { access_token: response.session.access_token }, function(data){
-    		// Some Code Here.
-		});
-
-		FB.api(
-    		"/post-id",
-    		function (response) {
-      			if (response && !response.error) {
-      				if (response.message.contains("friends")) {
-      					console.log(response.message);
-      				}
-      			}
-    		}
-		);
-		// to get all the posts I've done since Jan 1st, 2017
-		//me/posts?limit=55&since=1483257601
-		// to get the reactions from a post
-		//POST_ID?fields=reactions.type(LIKE).summary(total_count).limit(0).as(like),reactions.type(LOVE).summary(total_count).limit(0).as(love),reactions.type(WOW).summary(total_count).limit(0).as(wow),reactions.type(HAHA).summary(total_count).limit(0).as(haha),reactions.type(SAD).summary(total_count).limit(0).as(sad),reactions.type(ANGRY).summary(total_count).limit(0).as(angry)
-		
+	// to get all the posts I've done since Jan 1st, 2017
+	//me/posts?limit=55&since=1483257601
+	// to get the reactions from a post
+	//POST_ID?fields=reactions.type(LIKE).summary(total_count).limit(0).as(like),reactions.type(LOVE).summary(total_count).limit(0).as(love),reactions.type(WOW).summary(total_count).limit(0).as(wow),reactions.type(HAHA).summary(total_count).limit(0).as(haha),reactions.type(SAD).summary(total_count).limit(0).as(sad),reactions.type(ANGRY).summary(total_count).limit(0).as(angry)
 	}
 }());
 
