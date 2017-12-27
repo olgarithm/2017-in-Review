@@ -2,8 +2,10 @@
 <html>
 <header>
 	<link rel="stylesheet" href="style.css">
+	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 	<script src="fb.js"></script>
 	<script src="Chart.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
 </header>
 <body>
 	<h1>2017 in Review</h1>
@@ -28,7 +30,7 @@
 		</div>
 	</div>
 	<h2>Reacts All Around</h2>
-	<p>2017 was a rollercoaster. Here are some emotions I felt over this year (hover to see a breakdown):</p>
+	<p>2017 was a rollercoaster. Here are some emotions I felt over this year (click through to see a breakdown):</p>
 	<div id="reacts">
 		<img id="like" src="images/like.png" alt="Facebook like button">
 		<img id="love" src="images/love.png" alt="Facebook love button">
@@ -37,12 +39,65 @@
 		<img id="cry" src="images/cry.png" alt="Facebook cry button">
 		<img id="angry" src="images/angry.png" alt="Facebook angry button">
 	</div>
-	<div id="reaction">
+	<div id="lists">
+		<ul id="likelist" class="hidden" style="margin-left: -3%">
+			<li><a href="http://www.porliniers.com/tiras/browse#15/martin-y-olga///1/0" target="_blank"><i class="em em-writing_hand"></i>"Martin y Olga" Comic Strips</a></li>
+			<li><a href="https://www.youtube.com/channel/UC3KEoMzNz8eYnwBC34RaKCQ" target="_blank"><i class="em em-robot_face"></i>Simone Giertz: Queen of Shitty Robots</a></li>
+			<li><a href="https://www.space.com/37873-amazing-photos-of-solar-eclipse-2017.html" target="_blank"><i class="em em-dark_sunglasses"></i>Total Solar Eclipse</a></li>
+		</ul>
+
+		<ul id="lovelist" class="hidden" style="margin-left: 13%">
+			<li><a href="https://www.youtube.com/watch?v=gNSfhSXtvSk" target="_blank"><i class="em em-cat"></i>Ain't Nothing Gonna Break My Stride</a></li> 
+			<li><a href="https://www.youtube.com/watch?v=R4jmsUozlrI" target="_blank"><i class="em em-computer"></i>TUNE House Roadshow</a></li>
+			<li><a href="https://www.youtube.com/watch?v=YN1QrKBoAf0" target="_blank"><i class="em em-sunny"></i>Another Day of Sun</a></li>
+			<li><a href="https://www.youtube.com/watch?v=WIrHn-lBajY" target="_blank"><i class="em em-dancer"></i>Someone in the Crowd</a></li>
+			<li><a href="https://www.youtube.com/watch?v=NkD10lhMMrg" target="_blank"><i class="em em-film_projector"></i>La La Land Epilogue</a></li>
+		</ul>
+
+		<ul id="laughlist" class="hidden" style="margin-left: 30%">
+			<li><a href="https://www.youtube.com/watch?v=jVhlJNJopOQ" target="_blank"><i class="em em-writing_hand"></i>Papyrus</a></li>
+			<li><a href="https://www.netflix.com/title/80025384" target="_blank"><i class="em em-woman"></i>Unbreakable Kimmy Schmidt</a></li> 
+			<li><a href="https://www.youtube.com/watch?v=LHzojPHyvKE" target="_blank"><i class="em em-rainbow-flag"></i>The Gay and Wondrous Life of Caleb Gallo</a></li>
+		</ul>
+
+		<ul id="wowlist" class="hidden" style="margin-left: 42%">
+			<li><a href="https://www.youtube.com/watch?v=LgmxMuW6Fsc" target="_blank"><i class="em em-printer"></i>OK Go's "Obsession"</a></li>
+			<li><a href="https://www.youtube.com/watch?v=gn4nRCC9TwQ" target="_blank"><i class="em em-man-walking"></i>Google's DeepMind AI Teaches Itself to Walk </a></li>
+			<li><a href="https://www.youtube.com/watch?v=ZYHRSs2I1_k" target="_blank"><i class="em em-camera"></i>UW Hyperlapses</a></li>
+			<li><a href="http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html" target="_blank"><i class="em em-moon"></i>If the Moon Were Only One Pixel</a></li>
+			<li><a href="https://www.youtube.com/watch?v=4x23uOvnyeI&index=8&list=LLpkW-YCSZsLTaqx-1rOrKuw&t=2s" target="_blank"><i class="em em-crown"></i>The Colors in Game of Thrones by Season</a></li>
+		</ul>
+
+		<ul id="crylist" class="hidden" style="margin-left: 60%">
+			<li><a href="https://gizmodo.com/exclusive-heres-the-full-10-page-anti-diversity-screed-1797564320" target="_blank"><i class="em em-memo"></i>James Damore's Google Manifesto</a></li>
+			<li><a href="https://www.youtube.com/watch?v=sE99le5FBrY" target="_blank"><i class="em em-star"></i>A Tribute to Carrie Fisher</a></li>
+			<li><a href="https://www.theatlantic.com/science/archive/2017/09/hurricane-irma-closes-in-on-miami/539217" target="_blank"><i class="em em-pray"></i>Hurrican Irma</a></li>
+			<li><a href="https://www.cbsnews.com/feature/las-vegas-shooting" target="_blank"><i class="em em-gun"></i>Las Vegas Shooting</a></li>
+		</ul>
+
+		<ul id="angrylist" class="hidden" style="margin-left: 75%">
+			<li><a href="https://www.nytimes.com/2017/03/06/us/politics/travel-ban-muslim-trump.html" target="_blank"><i class="em em-airplane"></i>Trump Travel Ban</a></li>
+			<li><a href="https://www.usmagazine.com/celebrity-news/pictures/hollywood-sexual-misconduct-scandals/" target="_blank"><i class="em em-no_entry_sign"></i>Sexual Assault in Hollywood</a></li>
+			<li><a href="https://www.nytimes.com/2017/12/14/technology/net-neutrality-repeal-vote.html" target="_blank"><i class="em em-signal_strength"></i>Net Neutrality Repeal</a></li>
+		<ul>
 	</div>
 
 	<h2>Some Failures</h2>
 	<p>You're not doing life correctly if you're not failing from time to time. Here lie the repressed memories of my failures:</p>
 	<img src="images/tombstones.png" alt="tombstones">
-
+	<img id="ghost" src="images/ghost.png" alt="ghost">
+	<object id="ghostpath" data="images/ghostpath.svg" type="image/svg+xml"></object>
+	<h2>Now Let's Jam!</h2>
+	<p>I listen to some music here and there. I got all of this information from<a href="https://2017wrapped.com/">here!</a></p>
+	<div id="spotify">
+		<iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1E9NWQfrTrKdnx" width="400" height="400" frameborder="0" allowtransparency="true"></iframe>
+		<h1>56,240 minutes of music</h1>
+		<h1>1,524 songs</h1>
+		<!--<p>GUY.exe (Superfruit), This Was a Home Once (Bad Suns), Secrets (The Weekend), Lost (Frank Ocean), Wait a Minute! (Willow)</p>-->
+		<h1>673 artists</h1>
+		<!--<p>Two Door Cinema Club, The Weeknd, Ed Sheeran, Bad Suns, Wild Child</p>-->
+		<h1>25 genres</h1>
+		<!--<p>Pop, Indie Pop, Modern Rock, Indietronica, Indie Rock</p>-->
+	</div>
 </body>
 </html>

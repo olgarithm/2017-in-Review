@@ -6,7 +6,7 @@ h3 {
 	font-size: 20px;
 }
 
-img {
+img, #ghostpath {
 	width: 100%;
 }
 
@@ -14,6 +14,14 @@ img {
 	font-family: sans-serif;
 	margin-left: 10px;
 	margin-right: 10px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+#ghost {
+	width: 15%;
 }
 
 #reacts {
@@ -25,18 +33,25 @@ img {
 	width: 15%;
 }
 
-#reacts img:hover {
+.active {
 	position: relative; 
     top: -15px;
 }
 
+.hidden {
+	display: none;
+}
+
 #charts {
-	display: flex;
-	flex-flow: row;
 	justify-content: center;
 	padding: 5px;
 	margin-left: 0px;
 	margin-right: 0px;
+}
+
+#charts, #spotify {
+	display: flex;
+	flex-flow: row;
 }
 
 #charts > div {

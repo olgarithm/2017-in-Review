@@ -1,46 +1,21 @@
 (function () {
 	var $ = function(id) { return document.getElementById(id); };
 
+	var xPosition = null;
+	var lastList = null;
+	var lastImage = null;
+
 	window.onload = function() {
 		createCharts();
-		//attachEmotions();
-		var allReactions = ["like", "love", "laugh", "wow", "cry", "angry"];
-		for (var i = 0; i < allReactions.length; i++) {
-			var myDiv = document.createElement('div');
-			var reaction = allReactions[i];
-			console.log(String(reaction));
-			$(reaction).onmouseover = function() {
-				myDiv.innerHTML = getReaction(String(this.getAttribute("id")));
-				myDiv.setAttribute("id", allReactions[i] + "Reaction");
-				$("reaction").appendChild(myDiv);
-			}
-			$(reaction).onmouseout = function() {
-				$("reaction").removeChild($("reaction").childNodes[0]);
-			}
-		}
+		attachEmotions();
+		var ghost = $("ghost");
+		document.addEventListener('mousemove', onMouseUpdate, false);
+		TweenLite.to(ghost, 1.5, {width:100});
 	}
 
-	function getReaction(type) {
-		var unorderedList = document.createElement("UL");
-		unorderedList.setAttribute("id", "displayedList");
-		if (type === "like") {
-			var entry = document.createElement("li");
-			entry.appendChild(document.createTextNode("blah"));
-			unorderedList.appendChild(entry);
-			return unorderedList;
-		} else if (type === "love") {
-			return "YASS LOVE";
-		} else if (type === "laugh") {
-			return "YAS LAUGH";
-		} else if (type === "wow") {
-			return "YAS WOW";
-		} else if (type === "cry") {
-			return "YAS CRY";
-		} else {
-			return "YAS ANGRY";
-		}
+	function onMouseUpdate(e) {
+		xPosition = e.pageX;
 	}
-
 	// Creates the three charts that are displayed using charts.js
 	function createCharts() {
 		// Type of Listing bar chart
@@ -160,17 +135,33 @@
 	function attachEmotions() {
 		var allReactions = ["like", "love", "laugh", "wow", "cry", "angry"];
 		for (var i = 0; i < allReactions.length; i++) {
-			var myDiv = document.createElement('div');
-			$(allReactions[i]).onmouseover = function() {
-				var type = getReaction(allReactions[i]);
-				console.log(type);
-				myDiv.innerHTML = getReaction(allReactions[i]);
-				myDiv.setAttribute("id", allReactions[i] + "Reaction");
-				$("reaction").appendChild(myDiv);
+			var reaction = allReactions[i];
+			$(reaction).onclick = function() {
+				var image = String(this.getAttribute("id"));
+				var list = String(this.getAttribute("id")) + "list";
+				$(list).classList.remove("hidden");
+				$(image).classList.add("active");
+				if (lastList != null) {
+					$(lastList).classList.add("hidden");
+				}
+				if (lastImage != null) {
+					$(lastImage).classList.remove("active");
+				}
+				lastList = list;
+				lastImage = image;
 			}
-			$(allReactions[i]).onmouseout = function() {
-				$("reaction").removeChild($("reaction").childNodes[0]);
-			}
+			/*$(reaction).onmouseout = function() {
+				var percent = Number(this.style.marginLeft);
+				var list = String(this.getAttribute("id")) + "list";
+			    var xPercent = xPosition/window.innerWidth * 100;
+			    console.log(xPercent);
+			    console.log(percent);
+			    while (xPercent > percent && xPercent < percent + 19) {
+			    	xPercent = xPosition/window.innerWidth * 100; // update the percent
+			    }
+				$(list).classList.add("hidden");
+				$(String(this)).classList.remove("hover");
+			}*/
 		}
 	}
 	// to get all the posts I've done since Jan 1st, 2017
