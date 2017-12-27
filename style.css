@@ -10,6 +10,19 @@ img, #ghostpath {
 	width: 100%;
 }
 
+#svg-doc {
+	position: absolute;
+    z-index: 1;
+}
+
+#parent {
+	position:relative;
+}
+
+#tombstones {
+	z-index: -1;
+}
+
 * {
 	font-family: sans-serif;
 	margin-left: 10px;
@@ -35,7 +48,7 @@ ul {
 
 .active {
 	position: relative; 
-    top: -15px;
+    top: -20px;
 }
 
 .hidden {

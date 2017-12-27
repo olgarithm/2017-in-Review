@@ -8,14 +8,32 @@
 	window.onload = function() {
 		createCharts();
 		attachEmotions();
+		animateGhost();
 		var ghost = $("ghost");
 		document.addEventListener('mousemove', onMouseUpdate, false);
-		TweenLite.to(ghost, 1.5, {width:100});
 	}
 
 	function onMouseUpdate(e) {
 		xPosition = e.pageX;
 	}
+
+	function animateGhost() {
+		var map, ghost, flight_path, flight_path_length, last_point;
+	    map                 = Snap($("svg-doc"));
+	    ghost          		= map.select("#ghost");
+	    ghostbbox       	= ghost.getBBox();
+	    flight_path 		= map.path("M52.6,62.4c0,0,263.7-13.4,271.8,27.5S118.7,136.5,76,161.2c-63.7,36.8,146.5,84.2,267.2,63.1").attr({ 'fill': 'none', 'stroke': 'none'});
+	    flight_path_length  = Snap.path.getTotalLength(flight_path);
+	    last_point          = flight_path.getPointAtLength(flight_path_length);
+	    Snap.animate(0, flight_path_length, function( step ) {
+	                    moveToPoint = Snap.path.getPointAtLength( flight_path, step );
+	                    x = moveToPoint.x - (ghostbbox.width/2);
+	                    y = moveToPoint.y - (ghostbbox.height/2);
+	                    ghost.transform('translate(' + x + ',' + y + ')');
+	                }, 5000, mina.easeout, function() {
+	                	console.log("done!");
+	                });
+	};
 	// Creates the three charts that are displayed using charts.js
 	function createCharts() {
 		// Type of Listing bar chart
@@ -150,18 +168,6 @@
 				lastList = list;
 				lastImage = image;
 			}
-			/*$(reaction).onmouseout = function() {
-				var percent = Number(this.style.marginLeft);
-				var list = String(this.getAttribute("id")) + "list";
-			    var xPercent = xPosition/window.innerWidth * 100;
-			    console.log(xPercent);
-			    console.log(percent);
-			    while (xPercent > percent && xPercent < percent + 19) {
-			    	xPercent = xPosition/window.innerWidth * 100; // update the percent
-			    }
-				$(list).classList.add("hidden");
-				$(String(this)).classList.remove("hover");
-			}*/
 		}
 	}
 	// to get all the posts I've done since Jan 1st, 2017

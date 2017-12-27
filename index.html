@@ -5,7 +5,8 @@
 	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 	<script src="fb.js"></script>
 	<script src="Chart.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+	<script src="snap.svg-min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </header>
 <body>
 	<h1>2017 in Review</h1>
@@ -43,12 +44,14 @@
 		<ul id="likelist" class="hidden" style="margin-left: -3%">
 			<li><a href="http://www.porliniers.com/tiras/browse#15/martin-y-olga///1/0" target="_blank"><i class="em em-writing_hand"></i>"Martin y Olga" Comic Strips</a></li>
 			<li><a href="https://www.youtube.com/channel/UC3KEoMzNz8eYnwBC34RaKCQ" target="_blank"><i class="em em-robot_face"></i>Simone Giertz: Queen of Shitty Robots</a></li>
+			<li><a href="https://www.youtube.com/watch?v=sRfnevzM9kQ" target="_blank"><i class="em em-house_with_garden"></i>Get Out</a></li>
 			<li><a href="https://www.space.com/37873-amazing-photos-of-solar-eclipse-2017.html" target="_blank"><i class="em em-dark_sunglasses"></i>Total Solar Eclipse</a></li>
 		</ul>
 
 		<ul id="lovelist" class="hidden" style="margin-left: 13%">
-			<li><a href="https://www.youtube.com/watch?v=gNSfhSXtvSk" target="_blank"><i class="em em-cat"></i>Ain't Nothing Gonna Break My Stride</a></li> 
 			<li><a href="https://www.youtube.com/watch?v=R4jmsUozlrI" target="_blank"><i class="em em-computer"></i>TUNE House Roadshow</a></li>
+			<li><a href="https://www.usatoday.com/story/news/politics/2017/01/21/womens-march-aims-start-movement-trump-inauguration/96864158/" target="_blank"><i class="em em-womens"></i>Women's March</a></li>
+			<li><a href="https://www.youtube.com/watch?v=gNSfhSXtvSk" target="_blank"><i class="em em-cat"></i>Ain't Nothing Gonna Break My Stride</a></li> 
 			<li><a href="https://www.youtube.com/watch?v=YN1QrKBoAf0" target="_blank"><i class="em em-sunny"></i>Another Day of Sun</a></li>
 			<li><a href="https://www.youtube.com/watch?v=WIrHn-lBajY" target="_blank"><i class="em em-dancer"></i>Someone in the Crowd</a></li>
 			<li><a href="https://www.youtube.com/watch?v=NkD10lhMMrg" target="_blank"><i class="em em-film_projector"></i>La La Land Epilogue</a></li>
@@ -56,7 +59,9 @@
 
 		<ul id="laughlist" class="hidden" style="margin-left: 30%">
 			<li><a href="https://www.youtube.com/watch?v=jVhlJNJopOQ" target="_blank"><i class="em em-writing_hand"></i>Papyrus</a></li>
-			<li><a href="https://www.netflix.com/title/80025384" target="_blank"><i class="em em-woman"></i>Unbreakable Kimmy Schmidt</a></li> 
+			<li><a href="https://www.youtube.com/watch?v=WwiVPkwY2ZE" target="_blank"><i class="em em-woman"></i>Unbreakable Kimmy Schmidt</a></li> 
+			<li><a href="https://www.youtube.com/watch?v=Bf12qwPWDVI" target="_blank"><i class="em em-horse"></i>Bojack Horseman</a></li>
+			<li><a href="https://www.youtube.com/watch?v=oltCLzdHLQo" target="_blank"><i class="em em-male-technologist"></i>Silicon Valley</a></li>
 			<li><a href="https://www.youtube.com/watch?v=LHzojPHyvKE" target="_blank"><i class="em em-rainbow-flag"></i>The Gay and Wondrous Life of Caleb Gallo</a></li>
 		</ul>
 
@@ -69,14 +74,17 @@
 		</ul>
 
 		<ul id="crylist" class="hidden" style="margin-left: 60%">
-			<li><a href="https://gizmodo.com/exclusive-heres-the-full-10-page-anti-diversity-screed-1797564320" target="_blank"><i class="em em-memo"></i>James Damore's Google Manifesto</a></li>
-			<li><a href="https://www.youtube.com/watch?v=sE99le5FBrY" target="_blank"><i class="em em-star"></i>A Tribute to Carrie Fisher</a></li>
 			<li><a href="https://www.theatlantic.com/science/archive/2017/09/hurricane-irma-closes-in-on-miami/539217" target="_blank"><i class="em em-pray"></i>Hurrican Irma</a></li>
 			<li><a href="https://www.cbsnews.com/feature/las-vegas-shooting" target="_blank"><i class="em em-gun"></i>Las Vegas Shooting</a></li>
+			<li><a href="https://gizmodo.com/exclusive-heres-the-full-10-page-anti-diversity-screed-1797564320" target="_blank"><i class="em em-memo"></i>James Damore's Google Manifesto</a></li>
+			<li><a href="https://www.youtube.com/watch?v=sE99le5FBrY" target="_blank"><i class="em em-star"></i>A Tribute to Carrie Fisher</a></li>
+			<li><a href="https://www.youtube.com/watch?v=g7Z7yXoIIJ0" target="_blank"><i class="em em-musical_note"></i>"Half-Light" by Rostam</i></a></li>
 		</ul>
 
 		<ul id="angrylist" class="hidden" style="margin-left: 75%">
 			<li><a href="https://www.nytimes.com/2017/03/06/us/politics/travel-ban-muslim-trump.html" target="_blank"><i class="em em-airplane"></i>Trump Travel Ban</a></li>
+			<li><a href="https://www.npr.org/2017/12/20/572157392/gop-poised-for-tax-victory-after-a-brief-delay" target="_blank"><i class="em em-moneybag"></i>Trump Tax Cut</a></li>
+			<li><a href="https://www.huffingtonpost.com/entry/trump-administration-cdc-banned-words_us_5a348ed2e4b0ff955ad3221d" target="_blank"><i class="em em-page_facing_up"></i>Trump Bans  CDC Words
 			<li><a href="https://www.usmagazine.com/celebrity-news/pictures/hollywood-sexual-misconduct-scandals/" target="_blank"><i class="em em-no_entry_sign"></i>Sexual Assault in Hollywood</a></li>
 			<li><a href="https://www.nytimes.com/2017/12/14/technology/net-neutrality-repeal-vote.html" target="_blank"><i class="em em-signal_strength"></i>Net Neutrality Repeal</a></li>
 		<ul>
@@ -84,9 +92,25 @@
 
 	<h2>Some Failures</h2>
 	<p>You're not doing life correctly if you're not failing from time to time. Here lie the repressed memories of my failures:</p>
-	<img src="images/tombstones.png" alt="tombstones">
-	<img id="ghost" src="images/ghost.png" alt="ghost">
-	<object id="ghostpath" data="images/ghostpath.svg" type="image/svg+xml"></object>
+	<div id="parent">
+		
+		<svg version="1.1" id="svg-doc" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 viewBox="0 0 404.7 279.1" style="enable-background:new 0 0 404.7 279.1;" xml:space="preserve">
+			<g id="ghost">
+				<path fill="#FFFFFF" stroke="#000000" stroke-width="2" class="st0" d="M39.2,79.5c0.1,0,0,0,0.1,0c0.7,0,2.5-0.5,7.3-3.9c0,0,1.5-1.2,5.6-0.7c0,0,4.3,0.3,7.6-1.8
+					c0,0,4.9-1.9,4.9-2.8c0,0-8.8-10.8-8.5-19.2c0,0-0.6-7.1,0.3-10.8c0.2-0.7,0.2-1.5,0.2-2.2c-0.3-6.7-1.3-11.4-3.2-14.1
+					c-0.4-0.6-1-1.4-1.4-2c-1.7-2.4-6-7.3-10.8-8c0,0-5.8-1.9-13.2,1.1c-2.3,1-4.4,2.5-5.9,4.4c-2.3,2.9-5.5,7.8-6.3,13.9
+					c-0.1,0.7-0.2,1.3-0.4,1.9c-0.4,1.6-1.2,4.9-0.6,7.7c0.1,0.7,0.2,1.4,0.2,2.2c0,2.5,0.1,7.7,0.5,8.9c0,0,1,5.4,0.9,8.3
+					c0,1.2,0.1,2.3,0.3,3.5c0.7,3.8,2.2,11.2,3.5,12.6c0,0,0.6,0.8,5.8-1.4c0,0,3.3-0.6,6.5,1c0.3,0.2,0.6,0.3,1,0.4
+					C35,78.7,38.1,79.6,39.2,79.5z"/>
+				<circle stroke="#000000" stroke-width="2" class="st1" cx="27" cy="32.3" r="2.8"/>
+				<ellipse stroke="#000000" stroke-width="3" class="st2" cx="34.7" cy="40.4" rx="2.1" ry="2.6"/>
+				<circle stroke="#000000" stroke-width="2" class="st1" cx="43.9" cy="33.2" r="2.8"/>
+			</g>
+		</svg>
+		<img id="tombstones" src="images/tombstones.png" alt="tombstones">
+	</div>
+	<!--<img id="ghost" src="images/ghost.svg" alt="ghost"> -->
 	<h2>Now Let's Jam!</h2>
 	<p>I listen to some music here and there. I got all of this information from<a href="https://2017wrapped.com/">here!</a></p>
 	<div id="spotify">
