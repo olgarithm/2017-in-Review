@@ -1,38 +1,39 @@
 (function () {
 	var $ = function(id) { return document.getElementById(id); };
-
-	var xPosition = null;
 	var lastList = null;
 	var lastImage = null;
+	var currentlyMoving = false;
 
 	window.onload = function() {
 		createCharts();
 		attachEmotions();
-		animateGhost();
-		var ghost = $("ghost");
-		document.addEventListener('mousemove', onMouseUpdate, false);
+		setInterval(animateGhost, 1500);
 	}
 
-	function onMouseUpdate(e) {
-		xPosition = e.pageX;
+	function checkVisible(elm) {
+  		var rect = elm.getBoundingClientRect();
+  		var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  		return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
 	}
 
 	function animateGhost() {
-		var map, ghost, flight_path, flight_path_length, last_point;
-	    map                 = Snap($("svg-doc"));
-	    ghost          		= map.select("#ghost");
-	    ghostbbox       	= ghost.getBBox();
-	    flight_path 		= map.path("M52.6,62.4c0,0,263.7-13.4,271.8,27.5S118.7,136.5,76,161.2c-63.7,36.8,146.5,84.2,267.2,63.1").attr({ 'fill': 'none', 'stroke': 'none'});
-	    flight_path_length  = Snap.path.getTotalLength(flight_path);
-	    last_point          = flight_path.getPointAtLength(flight_path_length);
-	    Snap.animate(0, flight_path_length, function( step ) {
-	                    moveToPoint = Snap.path.getPointAtLength( flight_path, step );
-	                    x = moveToPoint.x - (ghostbbox.width/2);
-	                    y = moveToPoint.y - (ghostbbox.height/2);
-	                    ghost.transform('translate(' + x + ',' + y + ')');
-	                }, 5000, mina.easeout, function() {
-	                	console.log("done!");
-	                });
+		if(checkVisible($("ghost")) && currentlyMoving == false) {
+			currentlyMoving = true;
+		    var map                 = Snap($("svg-doc"));
+		    var ghost          		= map.select("#ghost");
+		    var ghostbbox       	= ghost.getBBox();
+		    var flight_path 		= map.path("M25.9,33.4c0,0,290.3,15.5,298.5,56.4S118.7,136.5,76,161.2c-63.7,36.8,166.3,85.4,287,64.4").attr({ 'fill': 'none', 'stroke': 'none'});
+		    var flight_path_length  = Snap.path.getTotalLength(flight_path);
+		    var last_point          = flight_path.getPointAtLength(flight_path_length);
+		    Snap.animate(0, flight_path_length, function( step ) {
+		                    moveToPoint = Snap.path.getPointAtLength( flight_path, step );
+		                    x = moveToPoint.x - (ghostbbox.width/2);
+		                    y = moveToPoint.y - (ghostbbox.height/2);
+		                    ghost.transform('translate(' + x + ',' + y + ')');
+		                }, 8000, mina.easeout, function() {
+							currentlyMoving = false;
+		                });
+		}
 	};
 	// Creates the three charts that are displayed using charts.js
 	function createCharts() {
@@ -147,7 +148,11 @@
 		        }
 		    }
 		});
+		setTimeout(hideLoadScreen, 3000);
+	}
 
+	function hideLoadScreen() {
+		$("loader").classList.add("fadeOut"); 
 	}
 
 	function attachEmotions() {
@@ -157,19 +162,20 @@
 			$(reaction).onclick = function() {
 				var image = String(this.getAttribute("id"));
 				var list = String(this.getAttribute("id")) + "list";
-				$(list).classList.remove("hidden");
-				$(image).classList.add("active");
+				$(list).classList.toggle("hidden");
+				$(image).classList.toggle("active");
 				if (lastList != null) {
-					$(lastList).classList.add("hidden");
-				}
-				if (lastImage != null) {
-					$(lastImage).classList.remove("active");
+					if (lastList != list) {
+						$(lastList).classList.add("hidden");
+						$(lastImage).classList.remove("active");
+					}
 				}
 				lastList = list;
 				lastImage = image;
 			}
 		}
 	}
+
 	// to get all the posts I've done since Jan 1st, 2017
 	//me/posts?limit=55&since=1483257601
 	// to get the reactions from a post

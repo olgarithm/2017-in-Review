@@ -7,12 +7,19 @@
 	<script src="Chart.js"></script>
 	<script src="snap.svg-min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<title>2017 in Review</title>
 </header>
 <body>
+	<div id="loader">
+        <div id="parentLoader">
+	        <h2>Retrieving 2017 fun facts...</h2>
+	        <img src="images/months.gif" alt="month gif">
+	    </div>
+    </div>
 	<h1>2017 in Review</h1>
 	<p> This is the result of me getting an iPad Pro and being bored over winter break. I hope you enjoy~</p>
 	<h2>Make New Friends, but Keep the Old</h2>
-	<p>Here are some Facebook related facts and figures. I tried to use the Facebook API to get this information, but all the endpoints were dead ends because of privacy issues (even though I only wanted to find and use my own data...) So instead, I grabbed them using a script that runs over my personal activity feed and graphed them using Chart.js. The last graph is based on interactions through comments, likes, and reactions.</p>
+	<p>Here are some Facebook related facts and figures. I tried to use the Facebook API to get this information, but all the endpoints were dead ends because of privacy issues (even though I only wanted to find and use my own data...) So instead, I grabbed them using a <a href="https://github.com/olgatron9000/2017-in-Review/blob/master/reacts.js" target="_blank">script</a> that runs over my personal activity feed and graphed them using Chart.js. The last graph is based on interactions through comments, likes, and reactions.</p>
 	<div id="charts">
 		<div id="chart1">
 			<h3>Friends Made Per Month</h3>
@@ -43,15 +50,15 @@
 	<div id="lists">
 		<ul id="likelist" class="hidden" style="margin-left: -3%">
 			<li><a href="http://www.porliniers.com/tiras/browse#15/martin-y-olga///1/0" target="_blank"><i class="em em-writing_hand"></i>"Martin y Olga" Comic Strips</a></li>
+			<li><a href="https://www.youtube.com/watch?v=gNSfhSXtvSk" target="_blank"><i class="em em-cat"></i>Ain't Nothing Gonna Break My Stride</a></li> 
 			<li><a href="https://www.youtube.com/channel/UC3KEoMzNz8eYnwBC34RaKCQ" target="_blank"><i class="em em-robot_face"></i>Simone Giertz: Queen of Shitty Robots</a></li>
 			<li><a href="https://www.youtube.com/watch?v=sRfnevzM9kQ" target="_blank"><i class="em em-house_with_garden"></i>Get Out</a></li>
 			<li><a href="https://www.space.com/37873-amazing-photos-of-solar-eclipse-2017.html" target="_blank"><i class="em em-dark_sunglasses"></i>Total Solar Eclipse</a></li>
 		</ul>
 
-		<ul id="lovelist" class="hidden" style="margin-left: 13%">
+		<ul id="lovelist" class="hidden" style="margin-left: 14%">
+			<li><a href="http://www.wingsoverwa.com/" target="_blank"><i class="em em-small_airplane"></i>Wings Over Washington</a></li>
 			<li><a href="https://www.youtube.com/watch?v=R4jmsUozlrI" target="_blank"><i class="em em-computer"></i>TUNE House Roadshow</a></li>
-			<li><a href="https://www.usatoday.com/story/news/politics/2017/01/21/womens-march-aims-start-movement-trump-inauguration/96864158/" target="_blank"><i class="em em-womens"></i>Women's March</a></li>
-			<li><a href="https://www.youtube.com/watch?v=gNSfhSXtvSk" target="_blank"><i class="em em-cat"></i>Ain't Nothing Gonna Break My Stride</a></li> 
 			<li><a href="https://www.youtube.com/watch?v=YN1QrKBoAf0" target="_blank"><i class="em em-sunny"></i>Another Day of Sun</a></li>
 			<li><a href="https://www.youtube.com/watch?v=WIrHn-lBajY" target="_blank"><i class="em em-dancer"></i>Someone in the Crowd</a></li>
 			<li><a href="https://www.youtube.com/watch?v=NkD10lhMMrg" target="_blank"><i class="em em-film_projector"></i>La La Land Epilogue</a></li>
@@ -74,7 +81,7 @@
 		</ul>
 
 		<ul id="crylist" class="hidden" style="margin-left: 60%">
-			<li><a href="https://www.theatlantic.com/science/archive/2017/09/hurricane-irma-closes-in-on-miami/539217" target="_blank"><i class="em em-pray"></i>Hurrican Irma</a></li>
+			<li><a href="https://www.theatlantic.com/science/archive/2017/09/hurricane-irma-closes-in-on-miami/539217" target="_blank"><i class="em em-ocean"></i>Hurricane Irma</a></li>
 			<li><a href="https://www.cbsnews.com/feature/las-vegas-shooting" target="_blank"><i class="em em-gun"></i>Las Vegas Shooting</a></li>
 			<li><a href="https://gizmodo.com/exclusive-heres-the-full-10-page-anti-diversity-screed-1797564320" target="_blank"><i class="em em-memo"></i>James Damore's Google Manifesto</a></li>
 			<li><a href="https://www.youtube.com/watch?v=sE99le5FBrY" target="_blank"><i class="em em-star"></i>A Tribute to Carrie Fisher</a></li>
@@ -87,13 +94,12 @@
 			<li><a href="https://www.huffingtonpost.com/entry/trump-administration-cdc-banned-words_us_5a348ed2e4b0ff955ad3221d" target="_blank"><i class="em em-page_facing_up"></i>Trump Bans  CDC Words
 			<li><a href="https://www.usmagazine.com/celebrity-news/pictures/hollywood-sexual-misconduct-scandals/" target="_blank"><i class="em em-no_entry_sign"></i>Sexual Assault in Hollywood</a></li>
 			<li><a href="https://www.nytimes.com/2017/12/14/technology/net-neutrality-repeal-vote.html" target="_blank"><i class="em em-signal_strength"></i>Net Neutrality Repeal</a></li>
-		<ul>
+		</ul>
 	</div>
 
 	<h2>Some Failures</h2>
 	<p>You're not doing life correctly if you're not failing from time to time. Here lie the repressed memories of my failures:</p>
 	<div id="parent">
-		
 		<svg version="1.1" id="svg-doc" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			 viewBox="0 0 404.7 279.1" style="enable-background:new 0 0 404.7 279.1;" xml:space="preserve">
 			<g id="ghost">
@@ -110,9 +116,9 @@
 		</svg>
 		<img id="tombstones" src="images/tombstones.png" alt="tombstones">
 	</div>
-	<!--<img id="ghost" src="images/ghost.svg" alt="ghost"> -->
+
 	<h2>Now Let's Jam!</h2>
-	<p>I listen to some music here and there. I got all of this information from<a href="https://2017wrapped.com/">here!</a></p>
+	<p>I listen to some music here and there. I got all of this information from <a href="https://2017wrapped.com/" target="_blank">here!</a></p>
 	<div id="spotify">
 		<iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1E9NWQfrTrKdnx" width="400" height="400" frameborder="0" allowtransparency="true"></iframe>
 		<h1>56,240 minutes of music</h1>
