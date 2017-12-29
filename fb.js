@@ -5,8 +5,8 @@
 	var currentlyMoving = false;
 
 	window.onload = function() {
-		createCharts();
 		attachEmotions();
+		createCharts();
 		setInterval(animateGhost, 1500);
 	}
 
@@ -16,6 +16,7 @@
   		return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
 	}
 
+	// Using a SVG path and an image of a ghost, moves it along the path
 	function animateGhost() {
 		if(checkVisible($("ghost")) && currentlyMoving == false) {
 			currentlyMoving = true;
@@ -35,9 +36,9 @@
 		                });
 		}
 	};
+
 	// Creates the three charts that are displayed using charts.js
 	function createCharts() {
-		// Type of Listing bar chart
 		var first = $("firstChart");
 		var myChart = new Chart(first, {
 		    type: 'line',
@@ -65,6 +66,9 @@
 		        }]
 		    },
 		    options: {
+		    	animation: {
+		    		duration: 4000
+		    	},
 		    	responsive: false,
 		        scales: {
 		            yAxes: [{
@@ -105,6 +109,9 @@
 		        }]
    			},
     		options: {
+    			animation: {
+		    		duration: 4000
+		    	},
 		    	responsive: false,
 		    }
 		});
@@ -127,6 +134,9 @@
 		        }]
    			},
     		options: {
+    			animation: {
+		    		duration: 4000
+		    	},
 		    	responsive: false,
 		    	legend: {
 		            display: false
@@ -148,13 +158,12 @@
 		        }
 		    }
 		});
-		setTimeout(hideLoadScreen, 3000);
+		setTimeout(function() {
+			$("loader").classList.add("fadeOut"); 
+		}, 1500);
 	}
 
-	function hideLoadScreen() {
-		$("loader").classList.add("fadeOut"); 
-	}
-
+	// Depending on which reaction is clicked, displays the appropriate div
 	function attachEmotions() {
 		var allReactions = ["like", "love", "laugh", "wow", "cry", "angry"];
 		for (var i = 0; i < allReactions.length; i++) {
