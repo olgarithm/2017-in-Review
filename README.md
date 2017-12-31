@@ -29,9 +29,7 @@ Step 4- Start scrolling! Don't stop scrolling until you hit December 2016. My sc
 
 Step 5- Left click on the page (two finger tap on Mac OS), and select "Inspect element"
 
-```
 ![alt text](screenshots/inspectElement.png)
-```
 
 Step 6- You should now see some HTML! Navigate to the line that says 
 
@@ -41,21 +39,15 @@ Step 6- You should now see some HTML! Navigate to the line that says
 
 and left tap on it. Then select "Expand all"
 
-```
 ![alt text](screenshots/expandAll.png)
-```
 
 Step 7- Now, we want to copy all of this HTML. Navigate back to the same line, left tap on it, and now select "Edit as HTML."
 
-```
 ![alt text](screenshots/editAsHTML.png)
-```
 
 Step 8- We're almost there! Copy and paste all of the HTML into your favorite text editor and create a new file called "sample.HTML"
 
-```
 ![alt text](screenshots/HTML.png)
-```
 
 Step 8.5- If you don't already have [node.js](https://nodejs.org/en/) installed on your computer, go download it! 
 
