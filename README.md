@@ -2,7 +2,7 @@
 
 This is just a fun lil project I did over winter break to recap things I did in 2017.
 
-If you want to analyze your own Facebook data with the script that I made (react.js), here's what you need to do: 
+If you want to analyze your own Facebook data with the script that I made (reacts.js), here's what you need to do: 
 
 ## Let's Get Analyzing
 Step 1- Open up your profile

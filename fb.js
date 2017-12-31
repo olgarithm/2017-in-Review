@@ -120,9 +120,9 @@
 		var myBarChart = new Chart(third, {
     		type: "bar",
    			data: {
-   				labels: ["Wholesome Memes", "Christine Betts", "Natalie Andreeva", "Dan Radion", "Shanti Camper Singh", "Patty Popp"],
+   				labels: ["Wholesome Memes", "Christine Betts", "Dan Radion", "Shanti Camper Singh", "Patty Popp", "Karishma Mandyam"],
 		        datasets: [{
-		            data: [157, 116, 84, 75, 75, 58],
+		            data: [157, 116, 75, 75, 58, 50],
 		            backgroundColor: [
 		            	"rgba(54, 162, 235, 1)",
 		                "rgba(255, 99, 132, 1)",
