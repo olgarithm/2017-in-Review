@@ -54,4 +54,5 @@ node.js react > results.txt
 (This basically runs the code in react.js on sample.html and places the output into results.txt)
 
 Step 10- Observe your data! The file "results.txt" should now contain a breakdown of your Facebook interactions in 2017!
+
 ![results](screenshots/results.png)
