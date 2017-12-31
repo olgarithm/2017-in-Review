@@ -42,6 +42,14 @@ a {
 	margin-right: 0px;
 }
 
+#firstChart, #secondChart { 
+	width: 90%; 
+}
+
+#thirdChart {
+	width: 85%;
+}
+
 #charts, #spotify {
 	display: flex;
 	flex-flow: row;
