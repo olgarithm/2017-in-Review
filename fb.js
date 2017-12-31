@@ -10,6 +10,7 @@
 		setInterval(animateGhost, 1500);
 	}
 
+	// Checks whether the passed in element is visible on the page
 	function checkVisible(elm) {
   		var rect = elm.getBoundingClientRect();
   		var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
@@ -46,7 +47,7 @@
 		        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 		        datasets: [{
 		            label: '# of friends made',
-		            data: [8, 11, 7, 13, 13, 23, 26, 9, 16, 14, 1, 7],
+		            data: [8, 11, 9, 13, 13, 23, 26, 9, 16, 14, 1, 9],
 		            pointBackgroundColor: [
 		                'rgba(54, 100, 235, 1)',
 		                'rgba(54, 162, 256, 1)',
@@ -96,7 +97,7 @@
    			data: {
    				labels: ["Like", "Love", "Laugh", "Cry", "Wow", "Angry"],
 		        datasets: [{
-		            data: [2575, 395, 356, 130, 101, 11],
+		            data: [2593, 403, 367, 133, 106, 11],
 		            backgroundColor: [
 		            	"rgba(54, 162, 235, 1)",
 		                "rgba(255, 99, 132, 1)",
@@ -121,7 +122,7 @@
    			data: {
    				labels: ["Wholesome Memes", "Christine Betts", "Natalie Andreeva", "Dan Radion", "Shanti Camper Singh", "Patty Popp"],
 		        datasets: [{
-		            data: [156, 115, 84, 75, 72, 58],
+		            data: [157, 116, 84, 75, 75, 58],
 		            backgroundColor: [
 		            	"rgba(54, 162, 235, 1)",
 		                "rgba(255, 99, 132, 1)",
@@ -184,10 +185,5 @@
 			}
 		}
 	}
-
-	// to get all the posts I've done since Jan 1st, 2017
-	//me/posts?limit=55&since=1483257601
-	// to get the reactions from a post
-	//POST_ID?fields=reactions.type(LIKE).summary(total_count).limit(0).as(like),reactions.type(LOVE).summary(total_count).limit(0).as(love),reactions.type(WOW).summary(total_count).limit(0).as(wow),reactions.type(HAHA).summary(total_count).limit(0).as(haha),reactions.type(SAD).summary(total_count).limit(0).as(sad),reactions.type(ANGRY).summary(total_count).limit(0).as(angry)
 }());
 
