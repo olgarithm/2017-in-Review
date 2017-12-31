@@ -1,31 +1,25 @@
-# Using Reacts.js
+# 2017 in Review
 
-Want to analyze your own Facebook data? Here's what you have to do.
+This is just a fun lil project I did over winter break to recap things I did in 2017.
+
+If you want to analyze your own Facebook data with the script that I made, here's what you need to do: 
 
 ### Let's Get Analyzing
 Step 1- Open up your profile
 
-```
 ![profile](screenshots/profile.png)
-```
 
 Step 2- Open up your activity log
 
-```
 ![alt text](screenshots/viewActivityLog.png)
-```
 
 Step 3- Make sure the activity log filter is highlighted
 
-```
 ![alt text](screenshots/activityLog.png)
-```
 
 Step 4- Start scrolling! Don't stop scrolling until you hit December 2016. My script only analyzes your interactions in 2017, so if you want to go further, you'll have to edit the script
 
-```
 ![alt text](screenshots/december2016.png)
-```
 
 Step 5- Left click on the page (two finger tap on Mac OS), and select "Inspect element"
 
