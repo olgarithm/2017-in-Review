@@ -1,3 +1,34 @@
+* {
+	font-family: sans-serif;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#parentLoader {
+	position: relative;
+}
+
+#loader {
+	z-index: 2;
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	background-color: #36A2EB;
+	color: white;
+	text-align: center;
+}
+
+#loader h2 {
+	position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}
+
 h1, #charts > div{
 	text-align: center;
 }
@@ -6,74 +37,29 @@ h3 {
 	font-size: 20px;
 }
 
-img, #ghostpath {
-	width: 100%;
-}
-
-#svg-doc {
-	position: absolute;
-    z-index: 1;
-}
-
-#parentGrave {
-	position:relative;
-}
-
 a {
-  margin-left: 0px;
-  margin-right: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
 }
 
-#tombstones {
-	z-index: -1;
+#charts, #spotify {
+	display: flex;
+	flex-flow: row;
 }
 
-* {
-	font-family: sans-serif;
-	margin-left: 10px;
-	margin-right: 10px;
+#charts > div {
+	border: 2px solid black;
+	border-radius: 20px;
+	margin: 5px;
+	padding: 7px;
 }
 
 ul {
 	list-style-type: none;
 }
 
-#ghost {
-	width: 15%;
-}
-
 #reacts {
 	text-align: center;
-}
-
-#stats {
-	height: 35%;
-	width: 35%;
-}
-
-#loader {
-	z-index: 2;
-	position:fixed;
-    width:100%;
-    height:100%;
-    top:0px;
-    left:0px;
-    margin-right: 0px;
-    margin-left: 0px;
-	background-color: #36A2EB;
-	color: white;
-	text-align: center;
-}
-
-#parentLoader {
-	position: relative;
-}
-
-#loader h2 {
-	position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -10%);
 }
 
 #reacts img {
@@ -103,6 +89,17 @@ ul {
 	margin-right: 0px;
 }
 
+#olgas > img {
+	width: 5.7%;
+	height: 5.7%;
+}
+
+#olgas {
+	display: flex;
+	flex-flow: row;
+	margin-left: 2%;
+}
+
 .thumbnail, .thumbnail2 {
 	position: relative;
 }
@@ -116,7 +113,7 @@ ul {
 	padding: 10px;
 	margin: 5px;
 	border: 4px solid #000;
-	background: #fd0;
+	background: #fff;
 	border-radius: 1em;
 }
 
@@ -135,30 +132,32 @@ ul {
 	height: auto;
 }
 
-.thumbnail:hover figure,
-.thumbnail2:hover figure {
+.thumbnail:hover figure, .thumbnail2:hover figure {
 	display: block;
 }
 
-#olgas > img {
-	width: 5.7%;
-	height: 5.7%;
+#parentGrave {
+	position:relative;
 }
 
-#olgas {
-	display: flex;
-	flex-flow: row;
-	margin-left: 2%;
+#ghost {
+	width: 15%;
 }
 
-#charts, #spotify {
-	display: flex;
-	flex-flow: row;
+#tombstones {
+	z-index: -1;
 }
 
-#charts > div {
-	border: 2px solid black;
-	border-radius: 20px;
-	margin: 5px;
-	padding: 7px;
+img, #ghostpath {
+	width: 100%;
+}
+
+#svg-doc {
+	position: absolute;
+    z-index: 1;
+}
+
+#spotifyStats {
+	height: 35%;
+	width: 35%;
 }
