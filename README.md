@@ -35,7 +35,7 @@ and left tap on it. Then select "Expand all"
 
 ![expand all](images/screenshots/expandAll.png)
 
-Step 7- Now, we want to copy all of this HTML. Navigate back to the same line, left tap on it, and now select "Edit as HTML."
+Step 7- Now, we want to copy all of this HTML. Navigate back to the same line, left tap on it, and now select "Edit as HTML"
 
 ![edit as HTML](images/screenshots/editAsHTML.png)
 
@@ -57,4 +57,4 @@ Step 10- Observe your data! The file "results.txt" should now contain a breakdow
 
 ![results](images/screenshots/results.png)
 
-**DISCLAIMER** What you do with this data is your own responsibility. I asked for permission from all of the people whose names appeared in my website. Don't do anything that compromises someone's privacy.
+**DISCLAIMER:** What you do with this data is your own responsibility. I asked for permission from all of the people whose names appeared in my website. Don't do anything that compromises someone's privacy.

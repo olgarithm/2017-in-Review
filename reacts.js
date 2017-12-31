@@ -55,7 +55,17 @@ $('div[id="year_2017"]').each(function() {
 		var stringedText = $(this).text();
 		var strings = stringedText.split(" ");
 		if(stringedText.indexOf("likes") > 0 || stringedText.indexOf("liked") > 0) {
-			var friendsName = strings[3] + " " + strings[4].substring(0, strings[4].length - 2);
+			var friendsName = "";
+			var found = false;
+			for (var i = 4; i < strings.length && found == false; i++) {
+				if (strings[i].indexOf("'") > 0) {
+					found = true;
+					for (var j = 3; j <= i; j++) {
+						friendsName += strings[j] + " ";
+					}
+				}
+			}
+    		friendsName = friendsName.substring(0, friendsName.length - 3);
 			if (friends.get(friendsName) != undefined) {
 				friends.set(friendsName, friends.get(friendsName) + 1);
 			} else {
@@ -63,7 +73,17 @@ $('div[id="year_2017"]').each(function() {
 			}
 		} else if(stringedText.indexOf("to") > 0) {
 			if (strings[5] != undefined) {
-    			var friendsName = strings[4] + " " + strings[5].substring(0, strings[5].length - 2);
+				var friendsName = "";
+				var found = false;
+				for (var i = 5; i < strings.length && found == false; i++) {
+					if (strings[i].indexOf("'") > 0) {
+						found = true;
+						for (var j = 4; j <= i; j++) {
+							friendsName += strings[j] + " ";
+						}
+					}
+				}
+    			friendsName = friendsName.substring(0, friendsName.length - 3);
     			if (friends.get(friendsName) != undefined) {
     				friends.set(friendsName, friends.get(friendsName) + 1);
     			} else {
@@ -72,7 +92,17 @@ $('div[id="year_2017"]').each(function() {
     		}
 		} else if(stringedText.indexOf("on") > 0) {
 			if (strings[5] != undefined) {
-    			var friendsName = strings[4] + " " + strings[5].substring(0, strings[5].length - 2);
+				var friendsName = "";
+				var found = false;
+				for (var i = 5; i < strings.length && found == false; i++) {
+					if (strings[i].indexOf("'") > 0) {
+						found = true;
+						for (var j = 4; j <= i; j++) {
+							friendsName += strings[j] + " ";
+						}
+					}
+				}
+    			friendsName = friendsName.substring(0, friendsName.length - 3);
     			if (friends.get(friendsName) != undefined) {
     				friends.set(friendsName, friends.get(friendsName) + 1);
     			} else {
@@ -97,8 +127,13 @@ $('div[id="year_2017"]').each(function() {
 	});
 
 	console.log("Like, love, laugh, wow, cry, angry reactions: " + "[" + reactions + "]");
+	console.log();
 	console.log("Friends made per month: " + "[" + friendsMadePerMonth + "]");
+	console.log();
 	console.log("Total friends made in 2017: " + totalFriends);
+	console.log();
 	console.log("How much you interact with your friends:");
-	console.log(friendsArray);
+	for (var i = 0; i < friendsArray.length; i++) {
+		console.log(friendsArray[i]);
+	}
 });
